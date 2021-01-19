@@ -28,12 +28,14 @@ This script is included in /build.xml and /config/update-dependencies.xml.
     </fail>
 
     <property name="build.arch.${build.arch}" value="true"/>
+	<echo message="build.arch.${build.arch}: ${build.arch.${build.arch}}"/>
     <condition property="build.arch.arm" value="true">
         <or>
             <isset property="build.arch.arm64"/>
             <isset property="build.arch.arm32"/>
         </or>
     </condition>
+	<echo message="build.arch.arm: ${build.arch.arm}"/>
 
     <import file="build-bindings.xml"/>
 
@@ -227,6 +229,7 @@ This script is included in /build.xml and /config/update-dependencies.xml.
 
             <!-- or in LWJGL_BUILD_OUTPUT -->
             <local name="useSymlink"/>
+			<!-- <echo message="useSymlink: ${useSymlink}"/> -->
             <condition property="useSymlink" value="1">
                 <and>
                     <isset property="build.output"/>
@@ -235,6 +238,7 @@ This script is included in /build.xml and /config/update-dependencies.xml.
                     </not>
                 </and>
             </condition>
+			<!-- <echo message="useSymlink: ${useSymlink}"/> -->
 
             <mkdir dir="${build.output}/@{dir}" if:set="useSymlink"/>
 
