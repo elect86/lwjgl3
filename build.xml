@@ -20,11 +20,6 @@
             </condition>
         </fail>
 
-		<!-- <echo taskname="override" message="Build type: ${build.type}"/> -->
-		<!-- <echo taskname="override" message="Build type: ${build.output}"/> -->
-		<!-- <echo taskname="override" message="Build type: ${build.arch}"/> -->
-		<!-- <echo taskname="override" message="Build type: ${build.offline}"/> -->
-		<!-- <echo taskname="override" message="Build type: ${env.LWJGL_BUILD_TYPE}"/> -->
         <echo taskname="override" message="Build type: ${build.type}" if:set="env.LWJGL_BUILD_TYPE"/>
         <echo taskname="override" message="Build output: ${build.output}" if:set="env.LWJGL_BUILD_OUTPUT"/>
         <echo taskname="override" message="Build architecture: ${build.arch}" if:set="env.LWJGL_BUILD_ARCH"/>
@@ -33,9 +28,6 @@
         <mkdir-symlink dir="bin"/>
 
         <!-- Compile custom Ant tasks -->
-		<echo message="${bin}"/>
-		<echo message="${bin.ant}"/>
-		<echo message="${ant}"/>
         <mkdir dir="${bin.ant}"/>
         <lwjgl.javac
             destdir="${bin.ant}"

@@ -24,7 +24,6 @@ public class BindingConfig extends Task {
     }
 
     @Override public void execute() {
-		//System.out.println("BindingConfig::execute");
         if (isTrue("binding.nanovg")) {
             if (isFalse("binding.stb") || !(
                 isTrue("binding.bgfx") ||
@@ -51,7 +50,6 @@ public class BindingConfig extends Task {
 
         for (Map.Entry<String, Object> p : LWJGL.getProperties().entrySet()) {
             String name = p.getKey();
-            System.out.println("["+name+"]="+p.getValue());
             if (name.startsWith("binding.") && "true".equals(p.getValue())) {
                 modules.add(name.substring(8));
                 bindings.add("-D" + name + "=true");

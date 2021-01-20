@@ -5,11 +5,11 @@
 /wiki
 .gradle
 .DS_Store
-#*.bat
+*.bat
 *.conf
 *.dll
 *.dylib
-#*.jar
+*.jar
 *.jpg
 *.mhr
 *.obj
@@ -20,3 +20,5 @@
 *.wav
 *.zip
 touch.txt
+buildSrc/.gradle
+buildSrc/build

@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.6" />
+    <addNotNullAssertions enabled="false" />
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$" />
+    </excludeFromCompile>
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+    </wildcardResourcePatterns>
+    <bytecodeTargetLevel target="1.6">
+      <module name="lwjgl3.buildSrc" target="11" />
+      <module name="lwjgl3.buildSrc.main" target="11" />
+      <module name="lwjgl3.buildSrc.test" target="11" />
+      <module name="Root.buildSrc" target="11" />
+      <module name="Root.buildSrc.main" target="11" />
+      <module name="Root.buildSrc.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_STRING" value="-Xlint:unchecked" />
   </component>
 </project>
