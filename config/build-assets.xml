@@ -11,6 +11,7 @@ This script is included in /build.xml and depends on /build-definitions.xml
 -->
 <project name="assets" basedir="../" xmlns:if="ant:if" xmlns:unless="ant:unless">
     <target name="-update-assets">
+        <echo message="updateAssets"/>
         <uptodate property="assets-uptodate" targetfile="${test.resources}/demo/touch.txt">
             <srcfiles dir="config" includes="build-*.xml"/>
         </uptodate>
@@ -18,6 +19,7 @@ This script is included in /build.xml and depends on /build-definitions.xml
     </target>
 
     <target name="update-assets" description="Updates the demo assets">
+        <echo message="Updates the demo assets"/>
         <echo message="Updating..." taskname="Assets"/>
 
         <mkdir dir="${test.resources}/demo/nanovg/images" if:true="${binding.nanovg}"/>

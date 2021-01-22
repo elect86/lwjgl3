@@ -43,6 +43,9 @@
                 <isset property="lib-uptodate"/>
             </and>
         </condition>
+        <echo message="dependencies-uptodate=${dependencies-uptodate}"/>
+        <echo message="kotlinc-uptodate=${kotlinc-uptodate}"/>
+        <echo message="lib-uptodate=${lib-uptodate}"/>
 
         <antcall target="update-dependencies" unless:set="dependencies-uptodate"/>
     </target>

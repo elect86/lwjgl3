@@ -2,12 +2,14 @@
  * Copyright LWJGL. All rights reserved.
  * License terms: https://www.lwjgl.org/license
  */
+
 import java.net.*
 
 plugins {
     `java-platform`
     `maven-publish`
     signing
+    lwjgl.build
 }
 
 val lwjglVersion: String by project
@@ -462,6 +464,7 @@ tasks.withType<Sign> {
 }
 
 dependencies {
+    javaPlatform.allowDependencies()
     constraints {
         Artifacts.values().forEach { module ->
             api("org.lwjgl:${module.artifact}:$version")
